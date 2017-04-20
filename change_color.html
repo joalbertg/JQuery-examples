@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Cambiar estilos CSS</title>
+	<script type="text/javascript">
+		function estilo(color){
+			document.getElementById('cuadro').style.background = color;
+		}
+	</script>
+</head>
+<body>
+	<div id="cuadro" style="width: 200px; height: 200px; background: white;"></div>
+	<button type="button" onclick="estilo('yellow')">Amarillo</button>
+	<button type="button" onclick="estilo('blue')">Azul</button>
+	<button type="button" onclick="estilo('red')">Rojo</button>
+	<button type="button" onclick="estilo('green')">Green</button>
+
+</body>
+</html>

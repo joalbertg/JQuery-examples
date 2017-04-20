@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Campos obligatorios</title>
+	<style type="text/css">
+		.campos{
+			background: #fff;
+			color: #000;
+			border: 1px solid #6e6e6e;
+			height: 20px;
+		}
+
+		.error{
+			background: #ccc;
+			color: #000;
+			border: 3px solid #f00;
+			height: 20px;
+		}
+	</style>
+	<script type="text/javascript">
+		function validar(valor){
+			if(valor.value == ""){
+				valor.className = 'error'
+			}else{
+				valor.className = 'campos'
+			}
+		}
+
+		function validar_numeros(valor){
+			if((valor.value == "") | (isNaN(valor.value))){
+				valor.className = 'error'
+			}else{
+				valor.className = 'campos'
+			}
+		}
+
+		function longitud(valor, min){
+			if(valor.value.length < min){
+				valor.className = 'error'
+			}else{
+				valor.className = 'campos'
+			}
+		}
+	</script>
+</head>
+<body>
+	<form>
+		<input type="text" onblur="validar(this); longitud(this, 3)" class="campos" required placeholder="Nombre...">
+			<p></p>
+
+		<input type="text" onblur="validar(this)" class="campos" required placeholder="Correo...">
+			<p></p>
+
+		<input type="text" onblur="validar(this); longitud(this, 10)" class="campos" required placeholder="Mensaje...">
+			<p></p>
+
+		<input type="text" onblur="validar_numeros(this)" class="campos" required placeholder="Edad...">
+		<p></p>
+
+		<input type="submit">
+
+	</form>
+</body>
+</html>

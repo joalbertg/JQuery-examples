@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mostrar y ocultar</title>
+  <style type="text/css">
+    .style_red{
+      width: 200px;
+      height: 200px;
+      background: red;
+      display: none;
+    }
+  </style>
+  <script type="text/javascript">
+    function mostrar_ocultar(){
+      boton = document.getElementById('boton')
+// debugger;
+      if(boton.textContent == 'mostrar'){
+        mostrar()
+        boton.textContent = 'ocultar'
+      }else{
+        ocultar()
+        boton.textContent = 'mostrar'
+      }
+    }
+
+    function mostrar(){
+      document.getElementById('caja').style.display = 'block';
+    }
+
+    function ocultar(){
+      document.getElementById('caja').style.display = 'none';
+    }
+  </script>
+</head>
+<body>
+
+  <div id="caja" class="style_red"></div>
+  <button id="boton" onclick="mostrar_ocultar()">mostrar</button>
+
+</body>
+</html>

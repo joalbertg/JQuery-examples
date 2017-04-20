@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Elementos por ID</title>
+	<script type="text/javascript">
+		function pre_cargado(){
+			document.getElementById('div1').textContent = 'Haz click en el boton!!!';
+		}
+
+		function cargar(){
+			var valor = document.getElementById('div1');
+			// debugger;
+			valor.textContent = "wow!!!";
+		}
+	</script>
+</head>
+<body onload="pre_cargado()">
+	<div id="div1"></div>
+	<input type="submit" onclick="cargar()">
+</body>
+</html>
